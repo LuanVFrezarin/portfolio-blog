@@ -1,0 +1,211 @@
+@tailwind base; /* Importa estilos base do Tailwind */
+@tailwind components; /* Importa componentes do Tailwind */
+@tailwind utilities; /* Importa utilitários do Tailwind */
+
+@layer base { /* Camada base para estilos globais */
+  :root {
+    --font-inter: "Inter", system-ui, -apple-system, sans-serif; /* Define variável CSS pra fonte Inter */
+  }
+
+  body {
+    font-family: var(--font-inter); /* Aplica a fonte no body */
+  }
+
+  html {
+    scroll-behavior: smooth; /* Rolagem suave na página */
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.2); /* Cor do texto selecionado */
+    color: inherit;
+  }
+}
+
+@layer components { /* Camada de componentes customizados */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Esconde scrollbar no Webkit */
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* Esconde no IE/Edge */
+    scrollbar-width: none; /* Esconde no Firefox */
+  }
+}
+
+@layer utilities { /* Utilitários extras */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita texto a 2 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Estilos específicos pro conteúdo dos artigos */
+.prose {
+  line-height: 1.8; /* Altura da linha */
+}
+
+.prose h2 {
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a; /* Cor do h2 no modo claro */
+  scroll-margin-top: 80px; /* Margem pro scroll anchor */
+}
+
+.dark .prose h2 {
+  color: #f1f5f9; /* Cor no modo escuro */
+}
+
+.prose h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.dark .prose h3 {
+  color: #e2e8f0;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+  color: #475569;
+}
+
+.dark .prose p {
+  color: #94a3b8;
+}
+
+.prose strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.dark .prose strong {
+  color: #e2e8f0;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+  color: #475569;
+}
+
+.dark .prose li {
+  color: #94a3b8;
+}
+
+.prose a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.dark .prose a {
+  color: #60a5fa;
+}
+
+.prose a:hover {
+  color: #1d4ed8;
+}
+
+.dark .prose a:hover {
+  color: #93bbfd;
+}
+
+.prose blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: #64748b;
+}
+
+.dark .prose blockquote {
+  border-left-color: #60a5fa;
+  color: #94a3b8;
+}
+
+/* Code blocks */
+.prose pre {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.dark .prose pre {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+  font-size: 0.85em;
+}
+
+.prose code {
+  background-color: #f1f5f9;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+  color: #1e293b;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+}
+
+.dark .prose code {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.prose pre code {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Page transition */
+main {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

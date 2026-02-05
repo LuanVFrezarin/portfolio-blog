@@ -3,7 +3,9 @@
     "allow": [
       "Bash(dir:*)",
       "Bash(npm install:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(node -e:*)",
+      "Bash(npx next build:*)"
     ]
   }
 }

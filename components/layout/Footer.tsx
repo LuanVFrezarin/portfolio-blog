@@ -1,5 +1,5 @@
 import Link from "next/link"; // Pra navegar
-import { Github, Linkedin, Twitter, Mail, Code2, Heart } from "lucide-react"; // Icones das redes sociais
+import { Github, Linkedin, Mail, Code2, Heart } from "lucide-react"; // Icones das redes sociais
 import { NAV_LINKS, SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants"; // Constantes do site
 
 // Componente do footer/rodape do site
@@ -42,15 +42,6 @@ export function Footer() {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" /> {/* Botao LinkedIn */}
-              </a>
-              <a
-                href={SOCIAL_LINKS.twitter} // Link do Twitter
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" /> {/* Botao Twitter */}
               </a>
               <a
                 href={`mailto:${SOCIAL_LINKS.email}`} // Link de email

@@ -10,7 +10,7 @@ export default function ProjetosPage() {
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
 
-  return (
+  return(
     <div className="min-h-screen">
       {/* Header */}
       <section className="bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 py-16 md:py-20">

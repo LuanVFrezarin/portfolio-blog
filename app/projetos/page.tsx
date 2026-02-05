@@ -35,8 +35,9 @@ export default function ProjetosPage() {
             </p>
           </div>
           <div className="relative">
+            {/* Placeholder: troca pelo link do seu portfólio */}
             <iframe
-              src="#" // Placeholder: troca pelo link do seu portfólio
+              src="#"
               className="w-full h-[800px] border-0"
               title="Portfólio Luan Frezarin"
               loading="lazy"
